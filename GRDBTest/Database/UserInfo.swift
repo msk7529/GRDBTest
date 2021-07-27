@@ -41,4 +41,16 @@ struct UserInfo: Codable, PersistableRecord, FetchableRecord {
         container[Columns.address] = address
         container[Columns.hobby] = hobby
     }
+    
+    mutating func updateAddress(to address: String?) {
+        self.address = address
+        
+        Database.shared.save(info: self)
+    }
+    
+    mutating func updateHobby(to hobby: String?) {
+        self.hobby = hobby
+        
+        Database.shared.save(info: self)
+    }
 }

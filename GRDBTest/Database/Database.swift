@@ -101,4 +101,15 @@ final class Database {
         
         return results
     }
+    
+    func save(info: UserInfo) {
+        do {
+            try dbQueue?.write { db in
+                try info.save(db)
+                print("\(info.fullname) UserInfo Updated. \nMain Thread: \(Thread.isMainThread)")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }

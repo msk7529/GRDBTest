@@ -85,5 +85,61 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserInfoTableViewCell else { return }
+        
+        self.showUpdateAlert(cell.userInfo)
+    }
 }
 
+extension ViewController {
+    public func showUpdateAlert(_ info: UserInfo) {
+        let alertController: UIAlertController = .init(title: "주소/취미 입력", message: "주소 또는 취미를 입력하세요.\n한번에 하나만 입력가능", preferredStyle: .alert)
+                
+        alertController.addTextField { textField in
+            textField.placeholder = "주소 또는 취미를 입력하세요."
+            textField.isSecureTextEntry = false
+        }
+
+        let addAddressAction: UIAlertAction = .init(title: "주소입력", style: .default, handler: { [weak alertController, weak self] _ in
+            if let textField = alertController?.textFields?.first, let address = textField.text {
+                if address.isEmpty {
+                    if let index = self?.userInfo.firstIndex(where: { $0.id == info.id }) {
+                        self?.userInfo[index].updateAddress(to: nil)
+                        self?.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                    }
+                } else {
+                    if let index = self?.userInfo.firstIndex(where: { $0.id == info.id }) {
+                        self?.userInfo[index].updateAddress(to: address)
+                        self?.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                    }
+                }
+            }
+        })
+        
+        let addHobbyAction: UIAlertAction = .init(title: "취미입력", style: .default, handler: { [weak alertController, weak self] _ in
+            if let textField = alertController?.textFields?.first, let hobby = textField.text {
+                if hobby.isEmpty {
+                    if let index = self?.userInfo.firstIndex(where: { $0.id == info.id }) {
+                        self?.userInfo[index].updateHobby(to: nil)
+                        self?.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                    }
+                } else {
+                    if let index = self?.userInfo.firstIndex(where: { $0.id == info.id }) {
+                        self?.userInfo[index].updateHobby(to: hobby)
+                        self?.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                    }
+                }
+            }
+        })
+        
+        let cancelAction: UIAlertAction = .init(title: "취소", style: .cancel, handler: nil)
+        
+        alertController.addAction(addAddressAction)
+        alertController.addAction(addHobbyAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
