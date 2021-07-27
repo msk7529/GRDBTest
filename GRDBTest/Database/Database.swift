@@ -48,4 +48,15 @@ final class Database {
         }
         return migrator
     }
+    
+    func insert(info: UserInfo) {
+        do {
+            try dbQueue?.write { db in
+                try info.insert(db)
+                print("\(info.fullname) UserInfo updated.\nMain Thread: \(Thread.isMainThread)")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
