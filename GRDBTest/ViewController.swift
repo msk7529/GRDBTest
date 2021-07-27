@@ -10,12 +10,16 @@ import UIKit
 final class ViewController: UIViewController {
 
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var deleteAllButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createButton.backgroundColor = .systemBlue
         createButton.layer.cornerRadius = 10
+        
+        deleteAllButton.backgroundColor = .systemRed
+        deleteAllButton.layer.cornerRadius = 10
     }
 
     @IBAction func didTapCreateButton(_ sender: UIButton) {
@@ -34,6 +38,10 @@ final class ViewController: UIViewController {
         }
         
         Database.shared.insert(info: userInfo)
+    }
+    
+    @IBAction func didTapDeleteAllButton(_ sender: UIButton) {
+        Database.shared.deleteAll()
     }
 }
 

@@ -16,6 +16,7 @@ final class Database {
         let databaseURL = try FileManager.default
             .url(for: .applicationDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             .appendingPathComponent("db.sqlite")
+        print("db path: \(databaseURL)")
         
         dbQueue = try? DatabaseQueue(path: databaseURL.path)
 
@@ -54,6 +55,21 @@ final class Database {
             try dbQueue?.write { db in
                 try info.insert(db)
                 print("\(info.fullname) UserInfo updated.\nMain Thread: \(Thread.isMainThread)")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteAll() {
+        do {
+            _ = try dbQueue?.write { db in
+                do {
+                    let deleteRowsCount = try UserInfo.deleteAll(db)
+                    print("Delete All UserInfo (\(deleteRowsCount)).\nMain Thread: \(Thread.isMainThread)")
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         } catch {
             print(error.localizedDescription)

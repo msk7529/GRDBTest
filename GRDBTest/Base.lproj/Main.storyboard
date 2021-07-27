@@ -28,6 +28,18 @@
                                     <action selector="didTapCreateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rih-Zq-gBU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qh-vU-LLk">
+                                <rect key="frame" x="293" y="64" width="88" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="DeleteAll">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapDeleteAllButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MBI-Rc-QDi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -38,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="createButton" destination="V3f-Ek-1cs" id="FVZ-Bh-B4L"/>
+                        <outlet property="deleteAllButton" destination="6Qh-vU-LLk" id="0cV-ds-Hze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
