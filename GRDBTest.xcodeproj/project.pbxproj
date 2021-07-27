@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CAF713292B416FBEA218AD2 /* Pods_GRDBTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFADC166FC1B3EB1038F04C1 /* Pods_GRDBTest.framework */; };
 		C269CD9526AFA83D00117788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269CD9426AFA83D00117788 /* AppDelegate.swift */; };
 		C269CD9726AFA83D00117788 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269CD9626AFA83D00117788 /* SceneDelegate.swift */; };
 		C269CD9926AFA83D00117788 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269CD9826AFA83D00117788 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7CEB544EF7F2E4B3319007D4 /* Pods-GRDBTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBTest.release.xcconfig"; path = "Target Support Files/Pods-GRDBTest/Pods-GRDBTest.release.xcconfig"; sourceTree = "<group>"; };
+		AF53401C3AA5B37208821A73 /* Pods-GRDBTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBTest.debug.xcconfig"; path = "Target Support Files/Pods-GRDBTest/Pods-GRDBTest.debug.xcconfig"; sourceTree = "<group>"; };
+		BFADC166FC1B3EB1038F04C1 /* Pods_GRDBTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRDBTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C269CD9126AFA83D00117788 /* GRDBTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRDBTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C269CD9426AFA83D00117788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C269CD9626AFA83D00117788 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CAF713292B416FBEA218AD2 /* Pods_GRDBTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630B6C5725EAD9AB75EEB703 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF53401C3AA5B37208821A73 /* Pods-GRDBTest.debug.xcconfig */,
+				7CEB544EF7F2E4B3319007D4 /* Pods-GRDBTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9366764B1D757017D503598C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFADC166FC1B3EB1038F04C1 /* Pods_GRDBTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C269CD8826AFA83D00117788 = {
 			isa = PBXGroup;
 			children = (
 				C269CD9326AFA83D00117788 /* GRDBTest */,
 				C269CD9226AFA83D00117788 /* Products */,
+				630B6C5725EAD9AB75EEB703 /* Pods */,
+				9366764B1D757017D503598C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C269CDA526AFA83F00117788 /* Build configuration list for PBXNativeTarget "GRDBTest" */;
 			buildPhases = (
+				48A7E512D5ED31EC2C366D75 /* [CP] Check Pods Manifest.lock */,
 				C269CD8D26AFA83D00117788 /* Sources */,
 				C269CD8E26AFA83D00117788 /* Frameworks */,
 				C269CD8F26AFA83D00117788 /* Resources */,
+				9E819937F2ED998D2A33EA0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48A7E512D5ED31EC2C366D75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GRDBTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E819937F2ED998D2A33EA0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GRDBTest/Pods-GRDBTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GRDBTest/Pods-GRDBTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GRDBTest/Pods-GRDBTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C269CD8D26AFA83D00117788 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		C269CDA626AFA83F00117788 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF53401C3AA5B37208821A73 /* Pods-GRDBTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +373,7 @@
 		};
 		C269CDA726AFA83F00117788 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CEB544EF7F2E4B3319007D4 /* Pods-GRDBTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
