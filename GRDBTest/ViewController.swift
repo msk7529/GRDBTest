@@ -11,6 +11,9 @@ final class ViewController: UIViewController {
 
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var deleteAllButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var userInfo: [UserInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,12 @@ final class ViewController: UIViewController {
         
         deleteAllButton.backgroundColor = .systemRed
         deleteAllButton.layer.cornerRadius = 10
+        
+        fetchUserInfos()
+    }
+    
+    private func fetchUserInfos() {
+        userInfo = Database.shared.fetchAll()
     }
 
     @IBAction func didTapCreateButton(_ sender: UIButton) {
@@ -38,10 +47,43 @@ final class ViewController: UIViewController {
         }
         
         Database.shared.insert(info: userInfo)
+        
+        self.userInfo.append(userInfo)
+        
+        let indexPath: IndexPath = .init(row: self.userInfo.count - 1, section: 0)
+        self.tableView.insertRows(at: [indexPath], with: .none)
+        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
     @IBAction func didTapDeleteAllButton(_ sender: UIButton) {
         Database.shared.deleteAll()
+        
+        self.userInfo.removeAll()
+        
+        self.tableView.reloadData()
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userInfo.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoTableViewCell.identifier, for: indexPath) as? UserInfoTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.userInfo = self.userInfo[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
     }
 }
 

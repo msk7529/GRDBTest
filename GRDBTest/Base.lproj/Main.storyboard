@@ -40,17 +40,82 @@
                                     <action selector="didTapDeleteAllButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MBI-Rc-QDi"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-gL-XeV">
+                                <rect key="frame" x="0.0" y="118" width="414" height="744"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserInfoTableViewCell" rowHeight="120" id="cgd-mR-bQ5" customClass="UserInfoTableViewCell" customModule="GRDBTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cgd-mR-bQ5" id="8yX-Uo-TsX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uj-lb-cvG">
+                                                    <rect key="frame" x="30" y="16" width="53" height="23"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-ln-tlD">
+                                                    <rect key="frame" x="30" y="49" width="22.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8s-gN-Kpq">
+                                                    <rect key="frame" x="30" y="70" width="49.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hobby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elG-aX-svb">
+                                                    <rect key="frame" x="30" y="91" width="40" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HbT-ln-tlD" firstAttribute="top" secondItem="1uj-lb-cvG" secondAttribute="bottom" constant="10" id="4se-BT-PAF"/>
+                                                <constraint firstItem="HbT-ln-tlD" firstAttribute="leading" secondItem="8yX-Uo-TsX" secondAttribute="leadingMargin" constant="10" id="E4p-CH-ntV"/>
+                                                <constraint firstItem="o8s-gN-Kpq" firstAttribute="leading" secondItem="8yX-Uo-TsX" secondAttribute="leadingMargin" constant="10" id="K0f-aI-CIj"/>
+                                                <constraint firstItem="elG-aX-svb" firstAttribute="top" secondItem="o8s-gN-Kpq" secondAttribute="bottom" constant="5" id="Lbt-xb-ieD"/>
+                                                <constraint firstItem="elG-aX-svb" firstAttribute="leading" secondItem="8yX-Uo-TsX" secondAttribute="leadingMargin" constant="10" id="e6J-nZ-XCt"/>
+                                                <constraint firstItem="o8s-gN-Kpq" firstAttribute="top" secondItem="HbT-ln-tlD" secondAttribute="bottom" constant="5" id="iTs-cV-wH2"/>
+                                                <constraint firstItem="1uj-lb-cvG" firstAttribute="top" secondItem="8yX-Uo-TsX" secondAttribute="topMargin" constant="5" id="ouB-Fu-Zse"/>
+                                                <constraint firstItem="1uj-lb-cvG" firstAttribute="leading" secondItem="8yX-Uo-TsX" secondAttribute="leadingMargin" constant="10" id="vdc-0C-hOK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="o8s-gN-Kpq" id="14u-JL-fB6"/>
+                                            <outlet property="hobbyLabel" destination="elG-aX-svb" id="sNS-vH-Dvp"/>
+                                            <outlet property="nameLabel" destination="1uj-lb-cvG" id="nER-cJ-96X"/>
+                                            <outlet property="sexLabel" destination="HbT-ln-tlD" id="Pvl-PK-jgZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RCY-3C-0Pv"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DZr-im-Ewn"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Oaf-gL-XeV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QVl-Gy-UV1"/>
                             <constraint firstItem="V3f-Ek-1cs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Qsa-CL-0BS"/>
+                            <constraint firstItem="Oaf-gL-XeV" firstAttribute="top" secondItem="V3f-Ek-1cs" secondAttribute="bottom" constant="20" id="UGu-Y9-K37"/>
                             <constraint firstItem="V3f-Ek-1cs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ZG5-hc-WSl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Oaf-gL-XeV" secondAttribute="bottom" id="grK-md-AIh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oaf-gL-XeV" secondAttribute="trailing" id="yyj-oz-40a"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="createButton" destination="V3f-Ek-1cs" id="FVZ-Bh-B4L"/>
                         <outlet property="deleteAllButton" destination="6Qh-vU-LLk" id="0cV-ds-Hze"/>
+                        <outlet property="tableView" destination="Oaf-gL-XeV" id="59y-NL-qQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

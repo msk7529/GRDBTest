@@ -75,4 +75,30 @@ final class Database {
             print(error.localizedDescription)
         }
     }
+    
+    func fetchAll() -> [UserInfo] {
+        var results = [UserInfo]()
+        do {
+            try dbQueue?.read { db in
+                results = try UserInfo.fetchAll(db)
+                print("Fetch All UserInfo (\(results.count)).\nMain Thread: \(Thread.isMainThread)")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return results
+    }
+    
+    func fetchAllCount() -> Int {
+        var results = 0
+        do {
+            try dbQueue?.read { db in
+                results = try UserInfo.fetchCount(db)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return results
+    }
 }

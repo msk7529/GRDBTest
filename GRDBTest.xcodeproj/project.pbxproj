@@ -16,6 +16,7 @@
 		C269CDA126AFA83F00117788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C269CD9F26AFA83F00117788 /* LaunchScreen.storyboard */; };
 		C269CDAA26AFCCF100117788 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269CDA926AFCCF100117788 /* Database.swift */; };
 		C269CDAC26AFD03100117788 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269CDAB26AFD03100117788 /* UserInfo.swift */; };
+		C269CDAE26AFF75200117788 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269CDAD26AFF75200117788 /* UserInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C269CDA226AFA83F00117788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C269CDA926AFCCF100117788 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		C269CDAB26AFD03100117788 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		C269CDAD26AFF75200117788 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				C269CD9426AFA83D00117788 /* AppDelegate.swift */,
 				C269CD9626AFA83D00117788 /* SceneDelegate.swift */,
 				C269CD9826AFA83D00117788 /* ViewController.swift */,
+				C269CDAD26AFF75200117788 /* UserInfoTableViewCell.swift */,
 				C269CD9A26AFA83D00117788 /* Main.storyboard */,
 				C269CD9D26AFA83F00117788 /* Assets.xcassets */,
 				C269CD9F26AFA83F00117788 /* LaunchScreen.storyboard */,
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C269CDAE26AFF75200117788 /* UserInfoTableViewCell.swift in Sources */,
 				C269CD9926AFA83D00117788 /* ViewController.swift in Sources */,
 				C269CD9526AFA83D00117788 /* AppDelegate.swift in Sources */,
 				C269CDAA26AFCCF100117788 /* Database.swift in Sources */,
