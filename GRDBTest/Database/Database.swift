@@ -112,4 +112,15 @@ final class Database {
             print(error.localizedDescription)
         }
     }
+    
+    func delete(info: UserInfo) {
+        do {
+            _ = try dbQueue?.write { db in
+                try UserInfo.deleteOne(db, key: info.id)
+                print("\(info.fullname) UserInfo Deleted.\nMain Thread: \(Thread.isMainThread)")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }

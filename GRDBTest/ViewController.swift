@@ -91,6 +91,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         self.showUpdateAlert(cell.userInfo)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            Database.shared.delete(info: self.userInfo[indexPath.row])
+            
+            self.userInfo.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 extension ViewController {
