@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		C269CD9C26AFA83D00117788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C269CD9A26AFA83D00117788 /* Main.storyboard */; };
 		C269CD9E26AFA83F00117788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C269CD9D26AFA83F00117788 /* Assets.xcassets */; };
 		C269CDA126AFA83F00117788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C269CD9F26AFA83F00117788 /* LaunchScreen.storyboard */; };
+		C269CDAA26AFCCF100117788 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269CDA926AFCCF100117788 /* Database.swift */; };
+		C269CDAC26AFD03100117788 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269CDAB26AFD03100117788 /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C269CD9D26AFA83F00117788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C269CDA026AFA83F00117788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C269CDA226AFA83F00117788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C269CDA926AFCCF100117788 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		C269CDAB26AFD03100117788 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,6 @@
 				AF53401C3AA5B37208821A73 /* Pods-GRDBTest.debug.xcconfig */,
 				7CEB544EF7F2E4B3319007D4 /* Pods-GRDBTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +84,7 @@
 		C269CD9326AFA83D00117788 /* GRDBTest */ = {
 			isa = PBXGroup;
 			children = (
+				C269CDA826AFCCC700117788 /* Database */,
 				C269CD9426AFA83D00117788 /* AppDelegate.swift */,
 				C269CD9626AFA83D00117788 /* SceneDelegate.swift */,
 				C269CD9826AFA83D00117788 /* ViewController.swift */,
@@ -90,6 +94,15 @@
 				C269CDA226AFA83F00117788 /* Info.plist */,
 			);
 			path = GRDBTest;
+			sourceTree = "<group>";
+		};
+		C269CDA826AFCCC700117788 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C269CDA926AFCCF100117788 /* Database.swift */,
+				C269CDAB26AFD03100117788 /* UserInfo.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +221,9 @@
 			files = (
 				C269CD9926AFA83D00117788 /* ViewController.swift in Sources */,
 				C269CD9526AFA83D00117788 /* AppDelegate.swift in Sources */,
+				C269CDAA26AFCCF100117788 /* Database.swift in Sources */,
 				C269CD9726AFA83D00117788 /* SceneDelegate.swift in Sources */,
+				C269CDAC26AFD03100117788 /* UserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
